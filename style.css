@@ -2,8 +2,9 @@
 
 /* Основные стили */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
   color: #333;
   background-color: #f4f4f4;
   margin: 0;
@@ -19,14 +20,20 @@ body {
 
 /* Шапка */
 header {
-  background-color: #0056b3;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   padding: 20px 0;
   border-bottom: 5px solid #004494;
 }
 
 header h1 {
   margin: 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Навигация */
@@ -49,12 +56,18 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #dfe6e9;
+  color: #4EC8FC;
+  /* color: linear-gradient(50deg, rgba(111,123,247,1) 0%, rgba(78,200,252,1) 100%); */
+}
+
+#branding p {
+  margin: 0;
+  font-size: 12px;
 }
 
 .menu-toggle {
@@ -66,7 +79,7 @@ nav a:hover {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: #000;
   margin: 5px 0;
 }
 /* Главный баннер */
@@ -124,6 +137,36 @@ nav a:hover {
   border-bottom: 1px solid #cccccc;
 }
 
+/* Стилизация отзывов клиентов */
+#testimonials {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.testimonial {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-author {
+    text-align: right;
+    display: block;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
 /* Футер */
 footer {
   background-color: #333333;
@@ -134,6 +177,57 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* Стилизация формы обратной связи */
+#feedback-form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #5cb85c; /* Зеленый цвет */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4cae4c; /* Темно-зеленый цвет */
 }
 
 @media (max-width: 768px) {
@@ -155,4 +249,8 @@ footer p {
   .menu-toggle {
     display: block;
   }
+
+  nav ul.active {
+  display: block;
+}
 }

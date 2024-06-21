@@ -9,21 +9,25 @@
   <body>
     <!-- Шапка с навигацией -->
     <header>
-      <!-- Ваш логотип и слоган -->
-      <div id="branding">
-        <h1>DAK System</h1>
-        <p>Инновации и эффективность для вашего бизнеса</p>
+      <div class="container">
+        <div class="header__container">
+          <!-- Ваш логотип и слоган -->
+          <div id="branding">
+            <img src="assets/logo.png" alt="DAK system logo" />
+            <p>Инновации и эффективность для вашего бизнеса</p>
+          </div>
+          <!-- Навигация -->
+          <div class="menu-toggle"><span></span><span></span><span></span></div>
+          <nav>
+            <ul>
+              <li><a href="#advantages">Преимущества</a></li>
+              <li><a href="#solutions">Решения</a></li>
+              <li><a href="#testimonials">Отзывы</a></li>
+              <li><a href="#contact">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <!-- Навигация -->
-      <div class="menu-toggle"><span></span><span></span><span></span></div>
-      <nav>
-        <ul>
-          <li><a href="#advantages">Преимущества</a></li>
-          <li><a href="#solutions">Решения</a></li>
-          <li><a href="#testimonials">Отзывы</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-      </nav>
     </header>
 
     <!-- Главный баннер с уникальным торговым предложением -->
@@ -73,14 +77,39 @@
       <div class="container">
         <h3>Отзывы наших клиентов</h3>
         <!-- Слайдер или список с отзывами -->
+         <!-- Отзыв клиента -->
+            <div class="testimonial">
+                <p class="testimonial-content">"Использование компрессорного оборудования от 'DAK System' позволило нам значительно повысить эффективность работы. Мы ценим надежность и высокое качество продукции."</p>
+                <p class="testimonial-author">- Алексей Иванов, генеральный директор ООО "СтройТех"</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-content">"Обслуживание клиентов в 'DAK System' на высшем уровне. Мы получили подробную консультацию и поддержку на всех этапах работы с оборудованием."</p>
+                <p class="testimonial-author">- Лев Антонович, генеральный директор ООО "ЭкоМастер"</p>
+            </div>
+            <!-- Еще отзывы -->
       </div>
     </section>
 
     <!-- Футер с контактной информацией -->
-    <footer>
+    <footer id="contact">
+      <!-- Форма обратной связи -->
       <div class="container">
-        <h3>Связаться с нами</h3>
-        <!-- Форма обратной связи -->
+        <h3>Свяжитесь с нами</h3>
+        <form action="submit_form.php" method="post">
+          <div class="form-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Отправить</button>
+        </form>
       </div>
     </footer>
 
