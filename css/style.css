@@ -304,6 +304,7 @@ nav a._active {
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s ease;
+  font-size: 16px;
 }
 
 #hero a {
@@ -696,5 +697,29 @@ footer p {
     color: #fff;
     text-shadow: 2px 2px #004494;
     text-decoration: underline;
+  }
+
+  #advantages,
+  #solutions,
+  #testimonials,
+  #contact {
+    top: 130px;
+  }
+
+  #advantages h3,
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  #advantages h3 {
+    font-size: 16px;
+  }
+
+  .benefit-item {
+    flex: 1 0 100%;
+  }
+
+  .benefits-section {
+    gap: 15px 40px;
   }
 }

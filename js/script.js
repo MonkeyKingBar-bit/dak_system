@@ -40,7 +40,6 @@ const solutionItem2 = document.querySelector('.solutions__list li:nth-child(2)')
 const solutionItem3 = document.querySelector('.solutions__list li:nth-child(3)');
 const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)');
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
-
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
 
@@ -96,30 +95,18 @@ let pageSlider = new Swiper('.page', {
         benefitItem.classList.add('_active');
       });
       animSolution();
-      // solutionItems.animate(fadeInLeft, Timing);
-      // document.querySelectorAll('.solutions__item:nth-child(1)').animate(
-      //   { opacity: 1, transition: "all 0.8s ease 0s"},
-      //   { animationDelay: "0.5s"}
-      // );
-      // setTimeout(function () { $('h1').removeClass('activate bounce'); }, 1000);
-      // solutionItems.forEach(solutionItem => {
-      //   solutionItem.animate({
-      //     opacity: [0, 1],
-      //     transform: ["translate(-120%, 0px)", "translate(0px, 0px)"]
-      //   }, {
-      //     duration: 2000,
-      //     animationTimingFunction: 'ease',
-      //     animationFillMode: 'forwards',
-      //     animationDelay: '1s',
-      //   });
-      // });
-
     },
     resize: function () {
       setScrollType();
     }
   },
 });
+
+// let advSlider = new Swiper('.advantage__slider', {
+//   pagination: {
+//     el: 'swiper-pagination',
+//   },
+// });
 
 function animSolution() {
   solutionItem1.animate({
