@@ -4,116 +4,398 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DAK System - IT-решения для компрессорного оборудования</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/animate.css" /> -->
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
   </head>
   <body>
-    <!-- Шапка с навигацией -->
-    <header>
-      <div class="container">
-        <div class="header__container">
-          <!-- Ваш логотип и слоган -->
-          <div id="branding">
-            <img src="assets/logo.png" alt="DAK system logo" />
-            <p>Инновации и эффективность для вашего бизнеса</p>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="header__container">
+            <!-- Ваш логотип и слоган -->
+            <div id="branding">
+              <h1 class="header__logo">DAK System</h1>
+              <p>Инновации и эффективность для вашего бизнеса</p>
+            </div>
+            <div class="header__menu menu">
+              <div class="menu__icon">
+                <span></span>
+              </div>
+              <nav class="menu__body">
+                <ul class="menu__list">
+                  <li>
+                    <a data-goto="#hero" href="#" class="menu__link">Главная</a>
+                  </li>
+                  <li>
+                    <a data-goto="#advantages" href="#" class="menu__link"
+                      >Преимущества</a
+                    >
+                  </li>
+                  <li>
+                    <a data-goto="#solutions" href="#" class="menu__link"
+                      >Решения</a
+                    >
+                  </li>
+                  <li>
+                    <a data-goto="#testimonials" href="#" class="menu__link"
+                      >Отзывы</a
+                    >
+                  </li>
+                  <li>
+                    <a data-goto="#contact" href="#" class="menu__link"
+                      >Контакты</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+              <!-- <span></span><span></span><span></span> -->
+            </div>
           </div>
-          <!-- Навигация -->
-          <div class="menu-toggle"><span></span><span></span><span></span></div>
-          <nav>
-            <ul>
-              <li><a href="#advantages">Преимущества</a></li>
-              <li><a href="#solutions">Решения</a></li>
-              <li><a href="#testimonials">Отзывы</a></li>
-              <li><a href="#contact">Контакты</a></li>
-            </ul>
-          </nav>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- Главный баннер с уникальным торговым предложением -->
-    <section id="hero">
-      <div class="container">
-        <h2>Уникальные IT-решения для компрессорного оборудования</h2>
-        <p>
-          Повышение производительности и надежности с помощью интеллектуальных
-          систем от DAK System.
-        </p>
-        <!-- Кнопка действия (Call to Action) -->
-        <a href="#contact" class="cta">Получить консультацию</a>
-      </div>
-    </section>
-
-    <!-- Раздел с преимуществами -->
-    <section id="advantages">
-      <div class="container">
-        <h3>Почему DAK System?</h3>
-        <ul>
-          <li>Инновационные разработки на основе последних исследований.</li>
-          <li>Индивидуальный подход к каждому клиенту.</li>
-          <li>Гарантия повышения эффективности оборудования.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Раздел с описанием решений -->
-    <section id="solutions">
-      <div class="container">
-        <h3>Наши решения</h3>
-        <!-- Описание конкретных IT-решений -->
-        <ul>
-          <li>Разработка и производство компрессоров нового поколения</li>
-          <li>Модернизация и улучшения существующих компрессорных установок</li>
-          <li>Поставка запасных частей и компонентов для компрессоров</li>
-          <li>
-            Обучение и консультации по обслуживанию и эксплуатации
-            компрессорного оборудования
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Раздел с отзывами клиентов -->
-    <section id="testimonials">
-      <div class="container">
-        <h3>Отзывы наших клиентов</h3>
-        <!-- Слайдер или список с отзывами -->
-         <!-- Отзыв клиента -->
-            <div class="testimonial">
-                <p class="testimonial-content">"Использование компрессорного оборудования от 'DAK System' позволило нам значительно повысить эффективность работы. Мы ценим надежность и высокое качество продукции."</p>
-                <p class="testimonial-author">- Алексей Иванов, генеральный директор ООО "СтройТех"</p>
+      <main class="page swiper">
+        <div class="page__wrapper swiper-wrapper">
+          <section id="hero" class="page__section swiper-slide">
+            <div class="container">
+              <div class="section__content">
+                <h1
+                  class="hero__title _anim-items _anim-no-hide"
+                  data-swiper-parallax="50%"
+                  data-swiper-parallax-opacity="0"
+                >
+                  Надежность и инновации в каждом компрессоре
+                </h1>
+                <p
+                  class="hero__sub-title _anim-items _anim-no-hide"
+                  data-swiper-parallax="50%"
+                  data-swiper-parallax-opacity="0"
+                >
+                  Откройте для себя мощь современных компрессорных систем от DAK
+                  System
+                </p>
+                <!-- Кнопка действия (Call to Action) -->
+                <a
+                  data-goto="#contact"
+                  href="#"
+                  class="cta menu__link _anim-items _anim-no-hide"
+                  data-swiper-parallax="50%"
+                  data-swiper-parallax-opacity="0"
+                  >Получить консультацию</a
+                >
+              </div>
+              <div class="section__body">
+                <div
+                  class="section__image"
+                  data-swiper-parallax="33%"
+                  data-swiper-parallax-scale="1.1"
+                >
+                  <img
+                    src="https://media.licdn.com/dms/image/D4E12AQH1IwOCgb8qQA/article-inline_image-shrink_1500_2232/0/1712222854834?e=1722470400&v=beta&t=38VX3ue0c3a1i_IKdBoyajTPseXc7v4T-DzaRtc2G24"
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
-            <div class="testimonial">
-                <p class="testimonial-content">"Обслуживание клиентов в 'DAK System' на высшем уровне. Мы получили подробную консультацию и поддержку на всех этапах работы с оборудованием."</p>
-                <p class="testimonial-author">- Лев Антонович, генеральный директор ООО "ЭкоМастер"</p>
+          </section>
+
+          <section id="advantages" class="page__section swiper-slide">
+            <div class="container">
+              <div class="section__content">
+                <h2
+                  class="page__sub-title"
+                  data-swiper-parallax="-100%"
+                  data-swiper-parallax-opacity="0"
+                  data-swiper-parallax-duration="1000"
+                >
+                  Почему DAK System?
+                </h2>
+                <h3 class="_anim-items _anim-no-hide">
+                  Мы стремимся к инновациям, чтобы вы могли сосредоточиться на
+                  росте вашего бизнеса
+                </h3>
+                <ul
+                  class="benefits-section"
+                  data-swiper-parallax-opacity="0"
+                  data-swiper-parallax-duration="900"
+                >
+                  <li class="benefit-item">
+                    <h3>Энергоэффективность</h3>
+                    <p>
+                      Сокращение затрат на энергию благодаря
+                      <strong>интеллектуальным алгоритмам</strong>,
+                      оптимизирующим потребление
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <h3>Контроль</h3>
+                    <p>
+                      <strong>Удаленный мониторинг</strong> оборудования в
+                      реальном времени для полного контроля над производственным
+                      процессом
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <h3>Партнерство</h3>
+                    <p>
+                      Стремление к долгосрочному сотрудничеству, поддерживающему
+                      рост и процветание вашего бизнеса
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <h3>Надежность</h3>
+                    <p>
+                      <strong>Предиктивное обслуживание</strong> и
+                      автоматизированное управление для минимизации времени
+                      простоя и повышения производительности
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <h3>Производительность</h3>
+                    <p>
+                      Наши системы оптимизируют рабочие процессы, что приводит к
+                      значительному
+                      <strong>увеличению производственных показателей</strong>
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <h3>Безопасность</h3>
+                    <p>
+                      Мы гарантируем, что наше оборудование соответствует всем
+                      <strong>стандартам безопасности</strong> и надежности
+                    </p>
+                  </li>
+                  <li class="benefit-item">
+                    <div class="benefit-item__text">
+                      <h3>
+                        С DAK System вы получаете не просто оборудование, а
+                      </h3>
+                      <span>надежного партнера,</span>
+                    </div>
+                    <h3>
+                      который заботится о вашем бесперебойном производстве
+                    </h3>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <!-- Еще отзывы -->
-      </div>
-    </section>
+          </section>
 
-    <!-- Футер с контактной информацией -->
-    <footer id="contact">
-      <!-- Форма обратной связи -->
-      <div class="container">
-        <h3>Свяжитесь с нами</h3>
-        <form action="submit_form.php" method="post">
-          <div class="form-group">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Электронная почта:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn">Отправить</button>
-        </form>
-      </div>
-    </footer>
+          <!-- Раздел с описанием решений -->
+          <section
+            id="solutions"
+            class="page__section swiper-slide _anim-items _anim-no-hide"
+          >
+            <div class="container">
+              <div class="section__content">
+                <h2
+                  class="page__sub-title"
+                  data-swiper-parallax="-100%"
+                  data-swiper-parallax-opacity="0"
+                  data-swiper-parallax-duration="1000"
+                >
+                  Наши решения
+                </h2>
+                <!-- <h3
+                  style="text-align: center"
+                  class="_anim-items _anim-no-hide"
+                  data-swiper-parallax="-100%"
+                  data-swiper-parallax-duration="900"
+                >
+                  В современной промышленности компрессорное оборудование играет
+                  ключевую роль в обеспечении непрерывности и эффективности
+                  производственных процессов. Наша компания предлагает ряд
+                  IT-решений, направленных на повышение производительности и
+                  надежности этих систем
+                </h3> -->
+                <!-- Описание конкретных IT-решений -->
+                <ul class="solutions__list _anim-items _anim-no-hide">
+                  <li class="solutions__item _anim-items _anim-no-hide">
+                    <div class="solutions__image">
+                      <img src="assets/icon/fi-rr-computer.svg" alt="" />
+                    </div>
+                    <p class="solutions__text">
+                      <strong>Система дистанционного мониторинга </strong>
+                      Используя датчики и IoT-технологии, мы предоставляем
+                      возможность реального времени отслеживать состояние
+                      оборудования, предупреждая о возможных неисправностях и
+                      износе компонентов
+                    </p>
+                  </li>
+                  <li class="solutions__item _anim-items _anim-no-hide">
+                    <div class="solutions__image">
+                      <img src="assets/icon/fi-rr-chart-histogram.svg" alt="" />
+                    </div>
+                    <p class="solutions__text">
+                      <strong>Аналитическая платформа </strong>Сбор и анализ
+                      данных с компрессоров позволяет оптимизировать рабочие
+                      параметры, уменьшить энергопотребление и предсказать
+                      потребность в техобслуживании
+                    </p>
+                  </li>
+                  <li class="solutions__item _anim-items _anim-no-hide">
+                    <div class="solutions__image">
+                      <img src="assets/icon/process.png" alt="" />
+                    </div>
+                    <p class="solutions__text">
+                      <strong>Автоматизированное управление </strong>Программное
+                      обеспечение для автоматизации процессов управления
+                      компрессорами обеспечивает стабильность работы и
+                      минимизацию человеческого фактора
+                    </p>
+                  </li>
+                  <li class="solutions__item _anim-items _anim-no-hide">
+                    <div class="solutions__image">
+                      <img src="assets/icon/recommendation.png" alt="" />
+                    </div>
+                    <p class="solutions__text">
+                      <strong>Интеграция с ERP-системами </strong>Наши
+                      IT-решения легко интегрируются с существующими
+                      корпоративными ресурсами, обеспечивая единую
+                      информационную среду для управления активами
+                    </p>
+                  </li>
+                  <li class="solutions__item _anim-items _anim-no-hide">
+                    <div class="solutions__image">
+                      <img src="assets/icon/fi-rr-cloud-share.svg" alt="" />
+                    </div>
+                    <p class="solutions__text">
+                      <strong>Облачные сервисы </strong>Мы предлагаем облачные
+                      решения для хранения и обработки данных, что гарантирует
+                      высокую доступность информации и упрощает совместную
+                      работу
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-    <!-- Скрипты для интерактивных элементов -->
-    <script src="script.js"></script>
+          <!-- Раздел с отзывами клиентов -->
+          <section id="testimonials" class="page__section swiper-slide">
+            <div class="container">
+              <div class="section__content">
+                <h2
+                  class="page__sub-title"
+                  data-swiper-parallax="-100%"
+                  data-swiper-parallax-opacity="0"
+                  data-swiper-parallax-duration="1000"
+                >
+                  Отзывы наших клиентов
+                </h2>
+                <!-- Слайдер или список с отзывами -->
+                <!-- Отзыв клиента -->
+                <div
+                  class="testimonial__items"
+                  data-swiper-parallax-duration="900"
+                >
+                  <div class="testimonial _anim-items _anim-no-hide">
+                    <p class="testimonial-content">
+                      "Использование компрессорного оборудования от DAK System
+                      позволило нам значительно повысить эффективность работы.
+                      Мы ценим надежность и высокое качество продукции"
+                    </p>
+                    <p class="testimonial-author">ООО "СтройТех"</p>
+                  </div>
+                  <div class="testimonial _anim-items _anim-no-hide">
+                    <p class="testimonial-content">
+                      "Благодаря автоматизированному управлению от DAK system,
+                      мы достигли нового уровня стабильности процессов.
+                      Минимизация человеческого фактора позволила нам улучшить
+                      качество продукции и увеличить общую производительность"
+                    </p>
+                    <p class="testimonial-author">
+                      Группа компаний "ЭнергоРесурс"
+                    </p>
+                  </div>
+
+                  <div class="testimonial _anim-items _anim-no-hide">
+                    <p class="testimonial-content">
+                      "Интеграция IT-решений DAK system с нашей ERP-системой
+                      была выполнена безупречно. Теперь у нас есть полная
+                      картина работы всех активов, что значительно упрощает
+                      управление ресурсами и планирование техобслуживания"
+                    </p>
+                    <p class="testimonial-author">ОАО "ГазНефть"</p>
+                  </div>
+                  <div class="testimonial _anim-items _anim-no-hide">
+                    <p class="testimonial-content">
+                      "Облачные сервисы от XYZ стали для нас настоящим прорывом.
+                      Возможность доступа к данным с любого устройства и
+                      легкость совместной работы сделали нашу команду более
+                      мобильной и эффективной"
+                    </p>
+                    <p class="testimonial-author">МКК "Воздушные Системы"</p>
+                  </div>
+                  <div class="testimonial _anim-items _anim-no-hide">
+                    <p class="testimonial-content">
+                      "Мы выбрали DAK System за их инновационный подход и
+                      передовые технологии. Результаты использования их
+                      оборудования просто впечатляющие!"
+                    </p>
+                    <p class="testimonial-author">ЗАО "ПромЭнерго"</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Еще отзывы -->
+            </div>
+          </section>
+
+          <section id="contact" class="page__section swiper-slide">
+            <!-- Форма обратной связи -->
+            <div class="container">
+              <div
+                class="section__content"
+                data-swiper-parallax="-100%"
+                data-swiper-parallax-opacity="0"
+                data-swiper-parallax-duration="1000"
+              >
+                <h2>Свяжитесь с нами</h2>
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Сообщение:</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn">Отправить</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="page__pagination"></div>
+        <div class="page__scroll"></div>
+      </main>
+      <!-- <footer>
+        <p>&copy; 2024 DAK System. Все права защищены.</p>
+      </footer> -->
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/graingert/WOW@1.3.0/dist/wow.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <script src="js/script.js"></script>
+
+    <!-- <script>
+      new WOW().init();
+    </script> -->
   </body>
 </html>
