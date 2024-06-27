@@ -53,20 +53,6 @@ if (iconMenu) {
   });
 }
 
-// const fadeInLeft =
-// {
-//   opacity: [0, 1],
-//   transform: ["translate(-120%, 0px)", "translate(0px, 0px)"]
-// };
-
-// const Timing = {
-//   duration: 2000,
-//   animationTimingFunction: 'ease',
-//   animationFillMode: 'forwards',
-//   animationDelay: '1s',
-//   // iterations: 1,
-// };
-
 let pageSlider = new Swiper('.page', {
   direction: 'vertical',
   slidesPerView: 'auto',
@@ -297,6 +283,11 @@ function menuSlider() {
         menuSliderRemove();
         pageSlider.slideTo(index, 800);
         menuLink.classList.add('_active');
+        if (iconMenu.classList.contains('_active')) {
+          document.body.classList.remove('_lock');
+          iconMenu.classList.remove('_active');
+          menuBody.classList.remove('_active');
+        }
         // benefitItem.classList.add('_active');
         e.preventDefault();
       });
