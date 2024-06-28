@@ -188,7 +188,7 @@ nav a._active {
 }
 
 .page__bullet_active {
-  background-color: #fff;
+  background-color: #e8491d;
 }
 
 .page__scroll {
@@ -242,26 +242,19 @@ nav a._active {
 
 /* Главный баннер */
 #hero {
-  /* min-height: 100vh; */
-  /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.6)),
-    url("https://media.licdn.com/dms/image/D4E12AQH1IwOCgb8qQA/article-inline_image-shrink_1500_2232/0/1712222854834?e=1722470400&v=beta&t=38VX3ue0c3a1i_IKdBoyajTPseXc7v4T-DzaRtc2G24")
-      no-repeat center center/cover; */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; */
-  /* background-attachment: fixed; */
   color: #ffffff;
   display: flex;
   align-items: center;
   text-align: center;
-  /* width: 100%;
-  height: 420px; */
 }
 
 #hero h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+}
+
+#hero .section__content {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero__title {
@@ -311,6 +304,7 @@ nav a._active {
   transform: translate(0px, 120%);
   opacity: 0;
   transition: all 0.8s ease 0.4s;
+  margin-bottom: 20px;
 }
 
 #hero a._active {
@@ -355,6 +349,23 @@ h2 {
 
 #advantages ul li:last-child h3 {
   margin: 0;
+}
+
+.advantage__slider {
+  height: 450px;
+}
+
+.advantage__slider__wrapper {
+
+}
+
+
+.advantage__slider-slide {
+
+}
+
+.advantage__slider-slide div {
+  max-width: 100%;
 }
 
 .benefits-section {
@@ -437,7 +448,7 @@ h2 {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  /* gap: 30px; */
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -464,28 +475,33 @@ h2 {
   background: #f9f9f9;
 }
 
+#testimonials h2 {
+  color: #ffffff;
+}
 .testimonial {
-  background: #ffffff;
   padding: 10px 20px;
   margin-bottom: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  flex: 0 1 45%;
-  min-height: 170px;
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); */
+  flex: 0 1 65%;
+  /* min-height: 170px; */
 }
 
 .testimonial__items {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: end;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 50px;
 }
 
 .testimonial-content {
-  font-style: italic;
-  color: #555;
+  /* font-style: italic; */
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 3rem;
+  padding: 10px 20px;
+  margin-top: 80px;
 }
 
 .testimonial-author {
@@ -646,6 +662,9 @@ footer p {
     padding: 100px 30px 30px 30px;
     transition: left 0.3s ease 0s;
     overflow: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 
   .menu__body._active {
@@ -666,6 +685,8 @@ footer p {
   .menu__list {
     display: flex;
     flex-direction: column;
+    top: 105px;
+    position: absolute;
   }
 
   .menu__list > li {
@@ -703,7 +724,7 @@ footer p {
   #solutions,
   #testimonials,
   #contact {
-    top: 130px;
+    top: 0px;
   }
 
   #advantages h3,
@@ -720,6 +741,11 @@ footer p {
   }
 
   .benefits-section {
+    opacity: 1 !important;
     gap: 15px 40px;
+  }
+
+  .cta {
+    font-size: 16px;
   }
 }

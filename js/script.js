@@ -42,7 +42,7 @@ const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)')
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
-
+const animItems = document.querySelectorAll('._anim-items');
 
 if (iconMenu) {
   iconMenu.addEventListener('click', function () {
@@ -102,12 +102,6 @@ let pageSlider = new Swiper('.page', {
   },
 });
 
-// let advSlider = new Swiper('.advantage__slider', {
-//   pagination: {
-//     el: 'swiper-pagination',
-//   },
-// });
-
 function animSolution() {
   solutionItem1.animate({
     opacity: [0, 1],
@@ -161,8 +155,6 @@ function animSolution() {
   });
 }
 
-const animItems = document.querySelectorAll('._anim-items');
-// const animShow = document.querySelectorAll('._anim-show');
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll);
   function animOnScroll() {
@@ -199,67 +191,6 @@ if (animItems.length > 0) {
     animOnScroll();
   }, 300);
 }
-
-// if (animShow.length > 0) {
-//   window.addEventListener('scroll', animShowOnScroll);
-//   function animShowOnScroll() {
-//     for (let index = 0; index < animShow.length; index++) {
-//       const animShowItem = animShow[index];
-//       const animShowItemHeight = animShowItem.offsetHeight;
-//       const animShowItemOffset = offset(animShowItem).top;
-//       const animShowStart = 1;
-
-//       let animShowItemPoint = window.innerHeight - animShowItemHeight / animShowStart;
-//       if (animShowItemHeight > window.innerHeight) {
-//         animShowItemPoint = window.innerHeight - window.innerHeight / animShowStart;
-//       }
-
-//       if ((pageYOffset > animShowItemOffset - animShowItemPoint) && pageYOffset < (animShowItemOffset + animShowItemHeight)) {
-//         animShowItem.classList.add('_active');
-//       } else {
-//         if (!animShowItem.classList.contains('_anim-no-hide')) {
-//           animShowItem.classList.remove('_active');
-//         }
-//       }
-//     }
-//   }
-//   function offset(el) {
-//     const rect = el.getBoundingClientRect(),
-//       scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-//   }
-
-//   setTimeout(() => {
-//     animOnScroll();
-//   }, 300);
-// }
-
-
-// if (menuLinks.length > 0) {
-//   menuLinks.forEach(menuLink => {
-//     menuLink.addEventListener('click', onMenuLinkClick);
-//   });
-//   function onMenuLinkClick(e) {
-//     const menuLink = e.target;
-//     if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-//       const gotoBlock = document.querySelector(menuLink.dataset.goto);
-//       const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
-
-//       if (iconMenu.classList.contains('_active')) {
-//         document.body.classList.remove('_lock');
-//         iconMenu.classList.remove('_active');
-//         menuBody.classList.remove('_active');
-//       }
-
-//       window.scrollTo({
-//         top: gotoBlockValue,
-//         behavior: "smooth"
-//       });
-//       e.preventDefault();
-//     }
-//   }
-// }
 
 function menuSlider() {
   if (menuLinks.length > 0) {
@@ -303,13 +234,34 @@ function setScrollType() {
       const pageSlideContentHeight = pageSlideContent.offsetHeight;
       if (pageSlideContentHeight > window.innerHeight) {
         wrapper.classList.add('_free');
-        pageSlider.params.freeMode = true;
+        pageSlider.params.freeMode.enabled = true;
         break;
       }
     }
   }
+
+  // if(window.innerWidth < 768) {
+  //   pageSlider.params.freeMode.enabled = true;
+  //   pageSlider.params.parallax = false;
+  //   // wrapper.classList.add('_free');
+  // }
 }
 
+let advSlider = new Swiper('.advantage__slider', {
+  grabCursor: true,
+  pagination: {
+    el: 'swiper-pagination',
+    clickable: true,
+  },
+  nested: true,
+  simulateTouch: true,
+  touchRatio: 1,
+  touchAngle: 45,
+  slideToClickedSlide: false,
+  hasNavigation: {
+    watchState: true,
+  }
+});
 
 pageSlider.init();
 // wow.init();
