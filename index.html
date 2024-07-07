@@ -389,14 +389,14 @@
                   Contact Us
                 </h2>
                 <div class="footer__container">
-                  <form class="feedback-form" action="#" method="post">
+                  <form id="form" class="feedback-form" action="#" method="post">
                     <div class="form-group">
-                      <label for="name">Name:</label>
-                      <input type="text" id="name" name="name" required />
+                      <label for="name">Name*:</label>
+                      <input class="_req" type="text" id="name" name="name" required />
                     </div>
                     <div class="form-group">
-                      <label for="email">Email:</label>
-                      <input type="email" id="email" name="email" required />
+                      <label for="email">E-mail*:</label>
+                      <input class="_req" type="email" id="email" name="email" required />
                     </div>
                     <div class="form-group">
                       <label for="message">Message:</label>
@@ -406,6 +406,21 @@
                         rows="5"
                         required
                       ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        checked
+                        id="agreement"
+                        class="checkbox__input _req"
+                        type="checkbox"
+                        name="agreement"
+                      />
+                      <label for="agreement" class="checkbox__label">
+                        <span>
+                          I give my consent to the processing of personal data
+                          in accordance with the <a href="">Terms</a>*</span
+                        >
+                      </label>
                     </div>
                     <button type="submit" class="btn">Send</button>
                   </form>
