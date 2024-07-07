@@ -182,12 +182,12 @@ nav a._active {
 
 .advantages__pagination {
   position: relative;
-  transform: translate(50px, -50%);
-  bottom: -170px;
+  transform: translate(50%, 50%);
   right: 50%;
   column-gap: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .advantages__bullet {
@@ -288,6 +288,7 @@ nav a._active {
   transform: translate(0px, 120%);
   opacity: 0;
   transition: all 0.8s ease 0s;
+  padding-top: 15px;
 }
 
 .hero__title._active {
@@ -315,7 +316,6 @@ nav a._active {
   text-shadow: 2px 2px #004494;
 }
 
-/* Кнопка действия */
 .cta {
   display: inline-block;
   padding: 10px 30px;
@@ -344,10 +344,7 @@ nav a._active {
   background: #cf391a;
 }
 
-/* Преимущества */
 #advantages {
-  /* min-height: 100vh; */
-  /* padding: 50px 0; */
   background: #ffffff;
 }
 
@@ -378,19 +375,9 @@ div.benefit-item h3 {
   margin: 0;
 }
 
-.advantage__slider__wrapper {
-}
-
-.advantage__slider-slide {
-}
-
 .advantages__swiper-pagination {
   display: none;
 }
-
-/* .advantage__slider-slide div {
-  max-width: 100%;
-} */
 
 .benefits-section {
   display: flex;
@@ -473,7 +460,7 @@ div.benefit-item h3 {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 15px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -547,11 +534,11 @@ div.benefit-item h3 {
   /* top: 130px; */
 }
 
-#contact .section__content {
+/* #contact .section__content {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
+} */
 
 /* Футер */
 footer {
@@ -559,7 +546,7 @@ footer {
   color: #ffffff;
   text-align: center;
   padding: 20px 0;
-  /* margin-bottom: 100px; */
+  margin-top: 100px;
   /* flex-shrink: 0; */
 }
 
@@ -883,7 +870,7 @@ footer p {
   } */
 
   .benefit-item__text {
-    margin-top: 70px;
+    /* margin-top: 70px; */
     /* flex: 1 0 65%; */
     /* width: 250px; */
   }
@@ -894,42 +881,12 @@ footer p {
     height: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: start;
   }
 
-  /* .swiper-button-next,
-  .swiper-button-prev {
-    background-color: white;
-    background-position: center;
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    /* background-size: 40px;
-    background-repeat: no-repeat;
-    padding: 8px 16px;
-    border-radius: 100%;
-    border: none;
-    color: red;
+  .benefit-item {
+    justify-content: flex-start;
   }
-
-  .swiper-button-prev {
-    background-image: url("/assets/icon/arrow-left.svg");
-  }
-
-  .swiper-button-next {
-    background-image: url("/assets/icon/arrow-right.svg");
-  }
-
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    content: "";
-  } */
-
-  /* .advantages__swiper-pagination {
-    display: block;
-    width: 15px;
-    height: 15px;
-    background-color: green;
-  } */
 
   .cta {
     font-size: 16px;
@@ -944,6 +901,7 @@ footer p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    /* justify-content: center; */
   }
 
   .solutions__list li {
@@ -975,10 +933,22 @@ footer p {
     margin-top: 0;
     line-height: 27px;
   }
+
+  .mission-content {
+    margin-top: 50px;
+    line-height: 2.7rem;
+    letter-spacing: 0.7px;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 580px) {
   /* .benefit-item__text {
     flex-direction: row;
   } */
+  .mission-content {
+    line-height: 1.7rem;
+    font-weight: normal;
+    font-size: 16px;
+  }
 }

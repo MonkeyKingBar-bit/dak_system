@@ -258,8 +258,8 @@ const width = window.innerWidth;
 if (width < 768) {
   let advSlider = new Swiper('.advantage__slider', {
     slideClass: 'advantage__slider-slide',
-    slidesPerView: 1.5,
-    spaceBetween: 15,
+    // slidesPerView: 1,
+    // spaceBetween: 15,
     grabCursor: true,
     pagination: {
       el: '.advantages__pagination',
@@ -278,9 +278,25 @@ if (width < 768) {
     },
     autoplay: {
       delay: 1500,
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1.5,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      }
     }
   });
 }
 
 pageSlider.init();
-// wow.init();
