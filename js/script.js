@@ -1,36 +1,36 @@
-// const isMobile = {
-//   Android: function () {
-//     return navigator.userAgent.match(/Android/i);
-//   },
-//   BlackBerry: function () {
-//     return navigator.userAgent.match(/BlackBerry/i);
-//   },
-//   iOS: function () {
-//     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-//   },
-//   Opera: function () {
-//     return navigator.userAgent.match(/Opera Mini/i);
-//   },
-//   Windows: function () {
-//     return navigator.userAgent.match(/IEMobile/i);
-//   },
-//   any: function () {
-//     return (
-//       isMobile.Android() ||
-//       isMobile.BlackBerry() ||
-//       isMobile.iOS() ||
-//       isMobile.Opera() ||
-//       isMobile.Windows()
-//     );
-//   }
-// };
+const isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function () {
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows()
+    );
+  }
+};
 
-// if (isMobile.any()) {
-//   document.body.classList.add('_touch');
-// } else {
-//   document.body.classList.add('_pc');
-// }
-// import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+if (isMobile.any()) {
+  document.body.classList.add('_touch');
+} else {
+  document.body.classList.add('_pc');
+}
+
 const wrapper = document.querySelector('.wrapper');
 const menuLinks = document.querySelectorAll('.menu__link');
 const benefitItems = document.querySelectorAll('.benefit-item');
@@ -42,7 +42,6 @@ const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)')
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
-const animItems = document.querySelectorAll('._anim-items');
 
 if (iconMenu) {
   iconMenu.addEventListener('click', function () {
@@ -95,9 +94,12 @@ let pageSlider = new Swiper('.page', {
         benefitItem.classList.add('_active');
       });
       animSolution();
+
     },
     resize: function () {
       setScrollType();
+      animSolutionRemove();
+
     }
   },
 });
@@ -155,6 +157,11 @@ function animSolution() {
   });
 }
 
+function animSolutionRemove() {
+  
+}
+
+const animItems = document.querySelectorAll('._anim-items');
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll);
   function animOnScroll() {
@@ -247,21 +254,33 @@ function setScrollType() {
   // }
 }
 
-let advSlider = new Swiper('.advantage__slider', {
-  grabCursor: true,
-  pagination: {
-    el: 'swiper-pagination',
-    clickable: true,
-  },
-  nested: true,
-  simulateTouch: true,
-  touchRatio: 1,
-  touchAngle: 45,
-  slideToClickedSlide: false,
-  hasNavigation: {
-    watchState: true,
-  }
-});
+const width = window.innerWidth;
+if (width < 768) {
+  let advSlider = new Swiper('.advantage__slider', {
+    slideClass: 'advantage__slider-slide',
+    slidesPerView: 1.5,
+    spaceBetween: 15,
+    grabCursor: true,
+    pagination: {
+      el: '.advantages__pagination',
+      clickable: true,
+      type: 'bullets',
+      bulletClass: 'advantages__bullet',
+      bulletActiveClass: 'advantages__bullet_active',
+    },
+    nested: true,
+    simulateTouch: false,
+    touchRatio: 1,
+    touchAngle: 45,
+    slideToClickedSlide: false,
+    hasNavigation: {
+      watchState: true,
+    },
+    autoplay: {
+      delay: 1500,
+    }
+  });
+}
 
 pageSlider.init();
 // wow.init();
