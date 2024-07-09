@@ -12,14 +12,13 @@
       content="compressor equipment, IT solutions, industrial automation, remote monitoring, energy efficiency, predictive maintenance"
     />
     <title>DAK Systems: industrial automation of compressor equipment</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header>
         <div class="container">
           <div class="header__container">
-            <!-- Ваш логотип и слоган -->
             <div id="branding">
               <h1 class="header__logo">DAK Systems</h1>
               <p>Innovation and efficiency for your business</p>
@@ -179,79 +178,6 @@
                   </div>
                   <h3>who cares about your uninterrupted production</h3>
                 </div>
-                <!-- <div class="advantage__slider swiper-container">
-                  <div class="slider__wrapper">
-                    <ul
-                      class="benefits-section"
-                      data-swiper-parallax-opacity="0"
-                      data-swiper-parallax-duration="900"
-                    >
-                      <li class="benefit-item advantage__slider-slide">
-                        <div>
-                          <h3>Энергоэффективность</h3>
-                          <p>
-                            Сокращение затрат на энергию благодаря
-                            <strong>интеллектуальным алгоритмам</strong>,
-                            оптимизирующим потребление
-                          </p>
-                        </div>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <h3>Контроль</h3>
-                        <p>
-                          <strong>Удаленный мониторинг</strong> оборудования в
-                          реальном времени для полного контроля над
-                          производственным процессом
-                        </p>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <h3>Партнерство</h3>
-                        <p>
-                          Стремление к долгосрочному сотрудничеству,
-                          поддерживающему рост и процветание вашего бизнеса
-                        </p>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <h3>Надежность</h3>
-                        <p>
-                          <strong>Предиктивное обслуживание</strong> и
-                          автоматизированное управление для минимизации времени
-                          простоя и повышения производительности
-                        </p>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <h3>Производительность</h3>
-                        <p>
-                          Наши системы оптимизируют рабочие процессы, что
-                          приводит к значительному
-                          <strong
-                            >увеличению производственных показателей</strong
-                          >
-                        </p>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <h3>Безопасность</h3>
-                        <p>
-                          Мы гарантируем, что наше оборудование соответствует
-                          всем
-                          <strong>стандартам безопасности</strong> и надежности
-                        </p>
-                      </li>
-                      <li class="benefit-item advantage__slider-slide">
-                        <div class="benefit-item__text">
-                          <h3>
-                            С DAK System вы получаете не просто оборудование, а
-                          </h3>
-                          <span>надежного партнера,</span>
-                        </div>
-                        <h3>
-                          который заботится о вашем бесперебойном производстве
-                        </h3>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- <div class="advantages__swiper-pagination"></div> -->
-                <!-- </div> -->
               </div>
             </div>
           </section>
@@ -389,23 +315,30 @@
                   Contact Us
                 </h2>
                 <div class="footer__container">
-                  <form id="form" class="feedback-form" action="#" method="post">
+                  <form id="form" class="feedback-form" action="#" novalidate>
                     <div class="form-group">
                       <label for="name">Name*:</label>
-                      <input class="_req" type="text" id="name" name="name" required />
+                      <input
+                        class="form__input _req"
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                      />
                     </div>
                     <div class="form-group">
                       <label for="email">E-mail*:</label>
-                      <input class="_req" type="email" id="email" name="email" required />
+                      <input
+                        class="form__input _req _email"
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                      />
                     </div>
                     <div class="form-group">
                       <label for="message">Message:</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows="5"
-                        required
-                      ></textarea>
+                      <textarea id="message" name="message" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                       <input
@@ -440,6 +373,6 @@
       >Get a consultation</a
     > -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

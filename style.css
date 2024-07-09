@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Основные стили */
 body {
   height: 100%;
@@ -570,8 +575,27 @@ footer p {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  position: relative;
 }
 
+.feedback-form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.9) url("/assets/loading.gif") center / 50px
+    no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.feedback-form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
 .feedback-form * {
   outline: none;
 }
@@ -586,9 +610,12 @@ footer p {
 }
 
 .form-group input:focus {
-   box-shadow: 0 0 15px #0c3a6e;
+  box-shadow: 0 0 15px #0c3a6e;
 }
 
+.form__input._error {
+  box-shadow: 0 0 15px #cf391a;
+}
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
@@ -604,6 +631,10 @@ footer p {
 .form-group textarea {
   min-height: 100px;
   resize: vertical;
+}
+
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px #cf391a;
 }
 
 .checkbox__input {

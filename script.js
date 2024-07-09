@@ -1,37 +1,37 @@
 'use strict'
 
-const isMobile = {
-  Android: function () {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function () {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function () {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function () {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function () {
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  any: function () {
-    return (
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Windows()
-    );
-  }
-};
+// const isMobile = {
+//   Android: function () {
+//     return navigator.userAgent.match(/Android/i);
+//   },
+//   BlackBerry: function () {
+//     return navigator.userAgent.match(/BlackBerry/i);
+//   },
+//   iOS: function () {
+//     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+//   },
+//   Opera: function () {
+//     return navigator.userAgent.match(/Opera Mini/i);
+//   },
+//   Windows: function () {
+//     return navigator.userAgent.match(/IEMobile/i);
+//   },
+//   any: function () {
+//     return (
+//       isMobile.Android() ||
+//       isMobile.BlackBerry() ||
+//       isMobile.iOS() ||
+//       isMobile.Opera() ||
+//       isMobile.Windows()
+//     );
+//   }
+// };
 
-if (isMobile.any()) {
-  document.body.classList.add('_touch');
-} else {
-  document.body.classList.add('_pc');
-}
+// if (isMobile.any()) {
+//   document.body.classList.add('_touch');
+// } else {
+//   document.body.classList.add('_pc');
+// }
 
 const wrapper = document.querySelector('.wrapper');
 const menuLinks = document.querySelectorAll('.menu__link');
@@ -44,6 +44,8 @@ const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)')
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
+const form = document.getElementById('form');
+
 
 if (iconMenu) {
   iconMenu.addEventListener('click', function () {
@@ -160,7 +162,7 @@ function animSolution() {
 }
 
 function animSolutionRemove() {
-  
+
 }
 
 const animItems = document.querySelectorAll('._anim-items');
@@ -180,11 +182,9 @@ if (animItems.length > 0) {
 
       if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
         animItem.classList.add('_active');
-        // animShow.classList.add('_active');
       } else {
         if (!animItem.classList.contains('_anim-no-hide')) {
           animItem.classList.remove('_active');
-          // animShow.classList.remove('_active');
         }
       }
     }
@@ -232,7 +232,9 @@ function menuSliderRemove() {
 function setScrollType() {
   if (wrapper.classList.contains('_free')) {
     wrapper.classList.remove('_free');
-    pageSlider.params.freeMode = false;
+    pageSlider.params.freeMode.enabled = false;
+    // pageSlider.params.freeMode.sticky = false;
+
   }
 
   for (let index = 0; index < pageSlider.slides.length; index++) {
@@ -244,6 +246,7 @@ function setScrollType() {
       if (pageSlideContentHeight > window.innerHeight) {
         wrapper.classList.add('_free');
         pageSlider.params.freeMode.enabled = true;
+        // pageSlider.params.freeMode.sticky = true;
         break;
       }
     }
@@ -301,20 +304,79 @@ if (width < 768) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('form');
-  form.addEventListener('submit', formSend);
+// document.getElementById('form').addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const formData = Object.fromEntries(new FormData(e.target).entries());
+//   console.log(formData);
+//   form.reset();
+// })
 
-  async function formSend(e) {
-    e.preventDefault;
 
-    let error = formValidate(form);
+form.addEventListener('submit', formSend);
+
+async function formSend(e) {
+  e.preventDefault;
+
+  let error = formValidate(form);
+
+  let formData = new FormData(form);
+
+  if (error === 0) {
+    form.classList.add('_sending');
+    let response = await fetch('sendmail.php', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      let result = await response.json();
+      alert(result.message);
+      form.reset();
+      form.classList.remove('_sending');
+    } else {
+      // alert('Error');
+      form.classList.remove('_sending');
+    }
+  } else {
+    alert('Fill required fields');
   }
+}
+function formValidate(form) {
+  let error = 0;
+  let formReq = document.querySelectorAll('._req');
+  for (let index = 0; index < formReq.length; index++) {
+    const input = formReq[index];
+    formRemoveError(input);
 
-  function formValidate(form) {
-    let error = 0;
-    let formReq = document.querySelectorAll('._req');
+    if (input.classList.contains('_email')) {
+      if (emailTest(input)) {
+        formAddError(input);
+        error++;
+      }
+    } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+      formAddError(input);
+      error++;
+    } else {
+      if (input.value === '') {
+        formAddError(input);
+        error++;
+      }
+    }
   }
-})
+  return error;
+}
+function formAddError(input) {
+  input.parentElement.classList.add('_error');
+  input.classList.add('_error');
+}
+function formRemoveError(input) {
+  input.parentElement.classList.remove('_error');
+  input.classList.remove('_error');
+}
+function emailTest(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+
 
 pageSlider.init();
