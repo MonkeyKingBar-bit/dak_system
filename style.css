@@ -280,7 +280,7 @@ nav a._active {
   text-align: center;
 }
 
-#hero h1 {
+.hero__title {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -301,7 +301,7 @@ nav a._active {
   opacity: 1;
 }
 
-#hero p {
+.hero__sub-title {
   font-size: 1.2rem;
 }
 
@@ -431,11 +431,6 @@ div.benefit-item h3 {
 #solutions {
   background-color: #f5f5f5;
   color: #333; /* Темный текст для читаемости */
-  /* padding: 20px; */
-  /* border-left: 4px solid #0078d7; Акцентный цвет */
-  /* margin: 20px 0; */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
-  /* transform: translate(-120%, 0px); */
 }
 
 #solutions h2 {
@@ -448,7 +443,7 @@ div.benefit-item h3 {
 }
 
 #solutions ul {
-  list-style: inside square; /* Стиль списка */
+  /* list-style: inside square;  */
 }
 
 #solutions li {
@@ -460,8 +455,6 @@ div.benefit-item h3 {
 }
 
 .solutions__list {
-  /* opacity: 0; */
-  /* animation: fadeInLeftBig 0.6s ease forwards; */
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -1021,6 +1014,7 @@ footer p {
     -o-animation: none !important;
     -ms-animation: none !important;
     animation: none !important;
+    opacity: 1 !important;
   }
 
   .solutions__item {
@@ -1048,5 +1042,17 @@ footer p {
     line-height: 1.7rem;
     font-weight: normal;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__sub-title {
+    font-size: 1rem;
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+  .mission {
+    padding: 10px 20px;
   }
 }

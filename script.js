@@ -36,7 +36,7 @@
 const wrapper = document.querySelector('.wrapper');
 const menuLinks = document.querySelectorAll('.menu__link');
 const benefitItems = document.querySelectorAll('.benefit-item');
-const solutionItems = document.querySelectorAll('.solutions__item');
+// const solutionItems = document.querySelectorAll('.solutions__item');
 const solutionItem1 = document.querySelector('.solutions__list li:nth-child(1)');
 const solutionItem2 = document.querySelector('.solutions__list li:nth-child(2)');
 const solutionItem3 = document.querySelector('.solutions__list li:nth-child(3)');
@@ -44,7 +44,7 @@ const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)')
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
-const form = document.getElementById('form');
+// const form = document.getElementById('form');
 
 
 if (iconMenu) {
@@ -106,6 +106,21 @@ let pageSlider = new Swiper('.page', {
 
     }
   },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      parallax: false,
+    },
+    // when window width is >= 480px
+    // 480: {
+    //   slidesPerView: 1.5,
+    //   spaceBetween: 30
+    // },
+    // when window width is >= 640px
+    640: {
+      parallax: true,
+    }
+  }
 });
 
 function animSolution() {
@@ -233,8 +248,6 @@ function setScrollType() {
   if (wrapper.classList.contains('_free')) {
     wrapper.classList.remove('_free');
     pageSlider.params.freeMode.enabled = false;
-    // pageSlider.params.freeMode.sticky = false;
-
   }
 
   for (let index = 0; index < pageSlider.slides.length; index++) {
@@ -246,7 +259,6 @@ function setScrollType() {
       if (pageSlideContentHeight > window.innerHeight) {
         wrapper.classList.add('_free');
         pageSlider.params.freeMode.enabled = true;
-        // pageSlider.params.freeMode.sticky = true;
         break;
       }
     }
@@ -310,6 +322,71 @@ document.getElementById('form').addEventListener('submit', (e) => {
   console.log(formData);
   form.reset();
 })
+
+
+// document.getElementById('form').addEventListener('submit', async function formSend(e) {
+//   e.preventDefault;
+
+//   let error = formValidate(form);
+
+//   let formData = new FormData(form);
+//   console.log(formData);
+//   if (error === 0) {
+//     form.classList.add('_sending');
+//     let response = await fetch('sendmail.php', {
+//       method: 'POST',
+//       body: formData,
+//     });
+
+//     if (response.ok) {
+//       let result = await response.json();
+//       alert(result.message);
+//       form.reset();
+//       form.classList.remove('_sending');
+//     } else {
+//       alert('Error');
+//       form.classList.remove('_sending');
+//     }
+//   } else {
+//     alert('Fill required fields');
+//   }
+// })
+
+// function formValidate(form) {
+//   let error = 0;
+//   let formReq = document.querySelectorAll('._req');
+//   for (let index = 0; index < formReq.length; index++) {
+//     const input = formReq[index];
+//     formRemoveError(input);
+
+//     if (input.classList.contains('_email')) {
+//       if (emailTest(input)) {
+//         formAddError(input);
+//         error++;
+//       }
+//     } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+//       formAddError(input);
+//       error++;
+//     } else {
+//       if (input.value === '') {
+//         formAddError(input);
+//         error++;
+//       }
+//     }
+//   }
+//   return error;
+// }
+// function formAddError(input) {
+//   input.parentElement.classList.add('_error');
+//   input.classList.add('_error');
+// }
+// function formRemoveError(input) {
+//   input.parentElement.classList.remove('_error');
+//   input.classList.remove('_error');
+// }
+// function emailTest(input) {
+//   return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+// }
 
 
 // form.addEventListener('submit', formSend);

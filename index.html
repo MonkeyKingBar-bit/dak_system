@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,9 +95,11 @@
                   data-swiper-parallax-scale="1.1"
                 >
                   <img
-                    src="assets/hero_bg.png"
+                    src="assets/hero_bg.webp"
                     alt="Innovative compressor system by DAK Systems"
+                    loading="lazy"
                   />
+                  <div class="swiper-lazy-preloader"></div>
                 </div>
               </div>
             </div>
@@ -196,7 +198,8 @@
                 <ul class="solutions__list _anim-items _anim-no-hide">
                   <li class="solutions__item">
                     <div class="solutions__image">
-                      <img src="assets/icon/fi-rr-computer.svg" alt="" />
+                      <img src="assets/icon/fi-rr-computer.svg" alt="Remote Monitoring System" loading="lazy"/>
+                      <div class="swiper-lazy-preloader"></div>
                     </div>
                     <p class="solutions__text">
                       <strong>Remote Monitoring System </strong>
@@ -207,7 +210,8 @@
                   </li>
                   <li class="solutions__item">
                     <div class="solutions__image">
-                      <img src="assets/icon/fi-rr-chart-histogram.svg" alt="" />
+                      <img src="assets/icon/fi-rr-chart-histogram.svg" alt="Analytical Platform" loading="lazy"/>
+                      <div class="swiper-lazy-preloader"></div>
                     </div>
                     <p class="solutions__text">
                       <strong>Analytical Platform </strong> Collecting and
@@ -218,7 +222,8 @@
                   </li>
                   <li class="solutions__item">
                     <div class="solutions__image">
-                      <img src="assets/icon/process.png" alt="" />
+                      <img src="assets/icon/process.webp" alt="Automated Management" loading="lazy"/>
+                      <div class="swiper-lazy-preloader"></div>
                     </div>
                     <p class="solutions__text">
                       <strong>Automated Management </strong>Software for
@@ -228,7 +233,8 @@
                   </li>
                   <li class="solutions__item">
                     <div class="solutions__image">
-                      <img src="assets/icon/recommendation.png" alt="" />
+                      <img src="assets/icon/recommendation.webp" alt="Integration with ERP Systems" loading="lazy"/>
+                      <div class="swiper-lazy-preloader"></div>
                     </div>
                     <p class="solutions__text">
                       <strong>Integration with ERP Systems </strong>Our IT
@@ -239,7 +245,8 @@
                   </li>
                   <li class="solutions__item">
                     <div class="solutions__image">
-                      <img src="assets/icon/fi-rr-cloud-share.svg" alt="" />
+                      <img src="assets/icon/fi-rr-cloud-share.svg" alt="Cloud Services" loading="lazy"/>
+                      <div class="swiper-lazy-preloader"></div>
                     </div>
                     <p class="solutions__text">
                       <strong>Cloud Services </strong>We offer cloud solutions
@@ -296,9 +303,11 @@
                   data-swiper-parallax-scale="1.1"
                 >
                   <img
-                    src="assets/mission_bg1.jpg"
+                    src="assets/mission_bg1.webp"
                     alt="Mission of DAK Systems company"
+                    loading="lazy"
                   />
+                  <div class="swiper-lazy-preloader"></div>
                 </div>
               </div>
             </div>
@@ -329,6 +338,7 @@
                     <div class="form-group">
                       <label for="email">E-mail*:</label>
                       <input
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$"
                         class="form__input _req _email"
                         type="email"
                         id="email"
