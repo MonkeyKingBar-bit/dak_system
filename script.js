@@ -1,38 +1,5 @@
 'use strict'
 
-// const isMobile = {
-//   Android: function () {
-//     return navigator.userAgent.match(/Android/i);
-//   },
-//   BlackBerry: function () {
-//     return navigator.userAgent.match(/BlackBerry/i);
-//   },
-//   iOS: function () {
-//     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-//   },
-//   Opera: function () {
-//     return navigator.userAgent.match(/Opera Mini/i);
-//   },
-//   Windows: function () {
-//     return navigator.userAgent.match(/IEMobile/i);
-//   },
-//   any: function () {
-//     return (
-//       isMobile.Android() ||
-//       isMobile.BlackBerry() ||
-//       isMobile.iOS() ||
-//       isMobile.Opera() ||
-//       isMobile.Windows()
-//     );
-//   }
-// };
-
-// if (isMobile.any()) {
-//   document.body.classList.add('_touch');
-// } else {
-//   document.body.classList.add('_pc');
-// }
-
 const wrapper = document.querySelector('.wrapper');
 const menuLinks = document.querySelectorAll('.menu__link');
 const benefitItems = document.querySelectorAll('.benefit-item');
@@ -44,7 +11,6 @@ const solutionItem4 = document.querySelector('.solutions__list li:nth-child(4)')
 const solutionItem5 = document.querySelector('.solutions__list li:nth-child(5)');
 const iconMenu = document.querySelector('.menu__icon');
 const menuBody = document.querySelector('.menu__body');
-// const form = document.getElementById('form');
 
 
 if (iconMenu) {
@@ -102,21 +68,12 @@ let pageSlider = new Swiper('.page', {
     },
     resize: function () {
       setScrollType();
-      animSolutionRemove();
-
     }
   },
   breakpoints: {
-    // when window width is >= 320px
     320: {
       parallax: false,
     },
-    // when window width is >= 480px
-    // 480: {
-    //   slidesPerView: 1.5,
-    //   spaceBetween: 30
-    // },
-    // when window width is >= 640px
     640: {
       parallax: true,
     }
@@ -175,11 +132,6 @@ function animSolution() {
     animationDelay: '1.3s',
   });
 }
-
-function animSolutionRemove() {
-
-}
-
 const animItems = document.querySelectorAll('._anim-items');
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll);
@@ -215,7 +167,6 @@ if (animItems.length > 0) {
     animOnScroll();
   }, 300);
 }
-
 function menuSlider() {
   if (menuLinks.length > 0) {
     menuLinks[pageSlider.realIndex].classList.add('_active');
@@ -230,7 +181,6 @@ function menuSlider() {
           iconMenu.classList.remove('_active');
           menuBody.classList.remove('_active');
         }
-        // benefitItem.classList.add('_active');
         e.preventDefault();
       });
     }
@@ -249,7 +199,6 @@ function setScrollType() {
     wrapper.classList.remove('_free');
     pageSlider.params.freeMode.enabled = false;
   }
-
   for (let index = 0; index < pageSlider.slides.length; index++) {
     const pageSlide = pageSlider.slides[index];
     const pageSlideContent = pageSlide.querySelector('.section__content');
@@ -263,20 +212,12 @@ function setScrollType() {
       }
     }
   }
-
-  // if(window.innerWidth < 768) {
-  //   pageSlider.params.freeMode.enabled = true;
-  //   pageSlider.params.parallax = false;
-  //   // wrapper.classList.add('_free');
-  // }
 }
 
 const width = window.innerWidth;
 if (width < 768) {
   let advSlider = new Swiper('.advantage__slider', {
     slideClass: 'advantage__slider-slide',
-    // slidesPerView: 1,
-    // spaceBetween: 15,
     grabCursor: true,
     pagination: {
       el: '.advantages__pagination',
@@ -297,17 +238,14 @@ if (width < 768) {
       delay: 1500,
     },
     breakpoints: {
-      // when window width is >= 320px
       320: {
         slidesPerView: 1,
         spaceBetween: 20
       },
-      // when window width is >= 480px
       480: {
         slidesPerView: 1.5,
         spaceBetween: 30
       },
-      // when window width is >= 640px
       640: {
         slidesPerView: 2,
         spaceBetween: 40
@@ -336,6 +274,7 @@ document.getElementById('form').addEventListener('submit', (e) => {
 //     let response = await fetch('sendmail.php', {
 //       method: 'POST',
 //       body: formData,
+// Cache - Control: max - age=31536000
 //     });
 
 //     if (response.ok) {
