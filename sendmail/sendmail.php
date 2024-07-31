@@ -13,16 +13,18 @@ $mail->setLanguage('en','phpmailer/language/');
 $mail->IsHTML(true);
 
 $mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'smtp.yandex.ru';
 $mail->SMTPAuth = true;
-$mail->Username = 'kateiiverem@gmail.com';
-$mail->Password = 'yrctzgqqskvelguo';
+$mail->Username = 'info@compressor.by';
+// xffxcdjcjwvvyyup
+// $mail->Password = 'yrctzgqqskvelguo';
+$mail->Password = 'xffxcdjcjwvvyyup';
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
 $mail->addReplyTo($_POST['email'], $_POST['name']);
-$mail->setFrom('kateiiverem@gmail.com', 'DAK Systems');
-$mail->addAddress('ursa48@belgianairways.com');
+$mail->setFrom('info@compressor.by', 'DAK Systems');
+$mail->addAddress('info@compressor.by');
 $mail->Subject = 'Request_DAK Systems';
 
 $body = '<h1>This message from site DAK Systems!</h1>';
