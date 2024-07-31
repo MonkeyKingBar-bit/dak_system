@@ -1,86 +1,5 @@
+// import Swal from 'sweetalert2';
 "use strict";
-
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form");
-  form.addEventListener("submit", formSend);
-
-  async function formSend(e) {
-    e.preventDefault();
-
-    let error = formValidate(form);
-
-    let formData = new FormData(form);
-
-    if (error === 0) {
-      form.classList.add("_sending");
-
-      let response = await fetch("sendmail.php", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-        form.classList.remove("_sending");
-      } else {
-        alert("Error");
-        form.classList.remove("_sending");
-      }
-    } else {
-      alert("Fill in required fields");
-    }
-  }
-
-  function formValidate(form) {
-    let error = 0;
-    let formReq = document.querySelectorAll("._req");
-
-    for (let index = 0; index < formReq.length; index++) {
-      const input = formReq[index];
-      formRemoveError(input);
-
-      if (input.classList.contains("_email")) {
-        if (emailTest(input)) {
-          formAddError(input);
-          error++;
-        }
-      } else {
-        if (input.value === "") {
-          formAddError(input);
-          error++;
-        }
-      }
-
-      // if (input.classList.contains("_phone")) {
-      //   if (isPhoneValid(input)) {
-      //     formAddError(input);
-      //     error++;
-      //   }
-      // }
-    }
-    return error;
-  }
-
-  function formAddError(input) {
-    input.parentElement.classList.add("_error");
-    input.classList.add("_error");
-  }
-
-  function formRemoveError(input) {
-    input.parentElement.classList.remove("_error");
-    input.classList.remove("_error");
-  }
-
-  function emailTest(input) {
-    return !/^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,8})+$/.test(input.value);
-  }
-
-  // function isPhoneValid(input) {
-  //   return !/^\8\d{3}\d{3}\d{2}\d{2}$/g.test(input.value);
-  // }
-});
 
 const wrapper = document.querySelector(".wrapper");
 const menuLinks = document.querySelectorAll(".menu__link");
@@ -358,5 +277,137 @@ if (width < 768) {
     },
   });
 }
+
+// const forms = document.forms;
+// if (forms.length) {
+//   for (const form of forms) {
+//     form.addEventListener('submit', formSubmitAction);
+//   }
+// }
+
+// async function formSubmitAction(e) {
+//   e.preventDefault();
+//   const form = e.target;
+//   const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : "#";
+//   const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : "GET";
+//   const formData = new FormData(form);
+
+//   form.classList.add("_sending");
+
+//   let response = await fetch(formAction, {
+//     method: formMethod,
+//     body: formData,
+//   });
+//   if (response.ok) {
+//     //         let result = await response.json();
+//     Swal.fire({
+//       icon: "success",
+//       title: "Success",
+//       text: "Form sent!",
+//       footer: '<a href="#">Why do I have this issue?</a>'
+//     });
+//     alert('Form sent!');
+//     form.reset();
+//     form.classList.remove("_sending");
+//   } else {
+//     alert("Error");
+//     form.classList.remove("_sending");
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form");
+  form.addEventListener("submit", formSend);
+
+  async function formSend(e) {
+    e.preventDefault();
+
+    let error = formValidate(form);
+
+    let formData = new FormData(form);
+
+    if (error === 0) {
+      form.classList.add("_sending");
+
+      let response = await fetch("sendmail/sendmail.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        let result = await response.json();
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: `${result.message}`,
+        });
+        form.reset();
+        form.classList.remove("_sending");
+      } else {
+        Swal.fire({
+          title: "Oops...",
+          text: "Something went wrong!",
+          icon: "error"
+        });
+        form.classList.remove("_sending");
+      }
+    } else {
+      Swal.fire({
+        title: "Warning",
+        text: "Fill in required fields!",
+        icon: "warning",
+        buttonsStyling: false
+      });
+    }
+  }
+
+  function formValidate(form) {
+    let error = 0;
+    let formReq = document.querySelectorAll("._req");
+
+    for (let index = 0; index < formReq.length; index++) {
+      const input = formReq[index];
+      formRemoveError(input);
+
+      if (input.classList.contains("_email")) {
+        if (emailTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else {
+        if (input.value === "") {
+          formAddError(input);
+          error++;
+        }
+      }
+
+      // if (input.classList.contains("_phone")) {
+      //   if (isPhoneValid(input)) {
+      //     formAddError(input);
+      //     error++;
+      //   }
+      // }
+    }
+    return error;
+  }
+
+  function formAddError(input) {
+    input.parentElement.classList.add("_error");
+    input.classList.add("_error");
+  }
+
+  function formRemoveError(input) {
+    input.parentElement.classList.remove("_error");
+    input.classList.remove("_error");
+  }
+
+  function emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,8})+$/.test(input.value);
+  }
+
+  // function isPhoneValid(input) {
+  //   return !/^\8\d{3}\d{3}\d{2}\d{2}$/g.test(input.value);
+  // }
+});
 
 pageSlider.init();
